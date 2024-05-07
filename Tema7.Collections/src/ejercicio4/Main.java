@@ -1,6 +1,7 @@
 package ejercicio4;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -9,18 +10,27 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 
-		HashSet<String> lista = new HashSet<String>();
+		ArrayList<String> lista = new ArrayList<String>();
 
 		String nombre = "";
 
 		while (lista.size() < 5) {
 			System.out.println("Dime un nombre: ");
 			nombre = sc.nextLine().toLowerCase();
-			lista.add(nombre);
+			if (lista.contains(nombre)) {
+				System.out.println("Ese nombre ya esta en la lista");
+			} else {
+				lista.add(nombre);
+			}
 		}
 
-		
+		System.out.println(lista);
 
+		Collections.reverse(lista);
+
+		System.out.println(lista);
+
+		sc.close();
 	}
 
 }
